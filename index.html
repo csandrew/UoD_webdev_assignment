@@ -1,0 +1,178 @@
+<!doctype html>
+<!--Declares the document is an HTML 5-->
+<html lang="en">
+  <!--Root-->
+
+  <head>
+    <!--Contains behind the scenes elements of the web page-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University of Dukes</title>
+    <!--Links external stylesheets or resources-->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Kaushan+Script&family=Macondo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <!--Fontawsome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- Navigation -->
+      <header>
+        <nav>
+          <div>
+            <img
+              src="images/UoDLogoR.png"
+              alt="logo image"
+              style="width: 200px; height: auto"
+            />
+          </div>
+          <div class="nav-links-container">
+            <ul class="nav-links">
+              <li>
+                <a href="index.html"
+                  ><i class="fa-solid fa-house-user"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="admissions.html"
+                  ><i class="fa-solid fa-ticket"></i> Admissions</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-building"></i> Campus-Life</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-book"></i> Academics</a>
+              </li>
+              <li>
+                <a href="about.html"
+                  ><i class="fa-solid fa-address-card"></i> About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Image Slider -->
+      <div class="swiper mySwiper">
+        <!-- Hero Text Content -->
+        <div class="hero-content-parent">
+          <div class="hero-content">
+            <h1>Welcome to University of Dukes</h1>
+            <p>
+              A community that makes sustainable contributions to scientific,
+              scholarly, and humanitarian progress.
+            </p>
+            <a href="admissions.html" class="btn">Apply Now</a>
+          </div>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="images/Konza.jpg"
+              alt="A scenic view of our University campus"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/A.S.H.A.jpg" alt="Graduation at UoD" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/YSK.jpg" alt="Scenic view" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/sunset.jpg" alt="Graduation ceremony" />
+          </div>
+        </div>
+        <!-- Navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Pagination (dots) -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <hr />
+    <!--horizontal line-->
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="feature" id="academics">
+        <img
+          src="images/YSK.jpg"
+          alt="Medical equipment used in Dukes University's medical school"
+        />
+        <h3>Academics</h3>
+        <p>Our programs are ranked among the best in the world.</p>
+      </div>
+
+      <div class="feature">
+        <img
+          src="images/Konza.jpg"
+          alt="A researcher working in the innovation labs"
+        />
+        <h3>Innovation Labs</h3>
+        <p>
+          Dukes researchers created the first programmable, logical quantum
+          processor.
+        </p>
+      </div>
+
+      <div class="feature" id="campus-life">
+        <img src="images/A.S.H.A.jpg" alt="Students playing tennis on campus" />
+        <h3>Vibrant Campus Life</h3>
+        <p>
+          Clubs, athletics, and cultural events make your university life
+          exciting.
+        </p>
+      </div>
+    </section>
+    <hr />
+    <!--horizontal line-->
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 University of Dukes. All Rights Reserved.</p>
+
+      <div class="social-links">
+        <h3>Follow Us On:</h3>
+        <a href="#" class="social-icon"
+          ><i class="fa-brands fa-square-facebook"></i
+        ></a>
+        <a href="#" class="social-icon"
+          ><i class="fa-brands fa-square-instagram"></i
+        ></a>
+        <a href="#" class="social-icon"
+          ><i class="fa-brands fa-square-x-twitter"></i
+        ></a>
+        <a href="#" class="social-icon"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom Script -->
+    <script src="js/myScript.js"></script>
+  </body>
+</html>

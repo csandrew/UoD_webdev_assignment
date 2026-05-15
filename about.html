@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - University of Dukes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div><img src="images/UoDLogoR.png" alt="logo image" style="width: 200px; height: auto;"></div>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fa-solid fa-house-user"></i> Home</a></li>
+          <li><a href="admissions.html"><i class="fa-solid fa-ticket"></i> Admissions</a></li>
+          <li><a href="#"><i class="fa-solid fa-building"></i> Campus-Life</a></li>
+          <li><a href="#"><i class="fa-solid fa-book"></i> Academics</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!--About us section-->
+  <section class="about-us" id="about">
+    <h2>Where Innovation Meets Excellence!</h2>
+    <p>At University of Dukes, we are committed to academic excellence, innovation, and holistic development.</p>
+    <p>Join us in the pursuit of knowledge and excellence!</p>
+
+    <div class="about-us-child">
+      <div id="vision">
+        <h3>Our Vision</h3>
+        <p>To be a Centre of Excellence in Scholarship, Research, and Training. To be a dynamic and innovative
+            information hub that empowers lifelong learning, and fosters research excellence.</p>
+      </div>
+
+      <div class="vertical-line"></div>
+
+      <div id="mission">
+        <h3>Our Mission</h3>
+        <p>To provide a holistic education that enables students to develop an enquiring mind and to pursue
+            truth as well as be socially balanced and responsible members of the society.</p>
+      </div>
+    </div>
+
+    <h1>Awards, Certifications & Credentials</h1>
+    <div class="container-credentials" id="awardsList"></div>
+    <script>
+      const awards = [
+        { title: "Best University Award 2024", image: "./images/trophy.jpg" },
+        { title: "ISO 9001 Certified", image: "./images/ISO9001.webp" },
+        { title: "Global Education Excellence", image: "./images/trophy 1.jpg" },
+        { title: "Accredited by ABC Council", image: "./images/kit.jpg" }
+      ];
+      const container = document.getElementById("awardsList");
+      awards.forEach(award => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = `<img src="${award.image}" alt="${award.title}"><h3>${award.title}</h3>`;
+        container.appendChild(card);
+      });
+    </script>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 University of Dukes. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
