@@ -1,325 +1,212 @@
-// ========================================
-// UNIVERSITY OF DUKES - MAIN JAVASCRIPT
-// Interactive Features & Functionality
-// ========================================
 
-// Wait for DOM to fully load
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ---------- NAVIGATION ----------
-    // Mobile Hamburger Menu Toggle
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+
+    //MOBILE HAMBURGER MENU TOGGLE
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', function () {
             navMenu.classList.toggle('active');
-            hamburger.innerHTML = navMenu.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
-    }
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
+
+        // Close menu when clicking on a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
                 navMenu.classList.remove('active');
-                if (hamburger) hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-    });
-    
-    // Sticky Navigation on Scroll
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            });
         });
     }
-    
-    // ---------- STATS COUNTER ANIMATION ----------
+
+    //STATS COUNTER ANIMATION (Home Page)
+
     const statNumbers = document.querySelectorAll('.stat-number');
+
     if (statNumbers.length > 0) {
-        const animateNumbers = () => {
+        function animateStats() {
             statNumbers.forEach(stat => {
                 const target = parseInt(stat.getAttribute('data-count'));
+                if (isNaN(target)) return;
+
                 let current = 0;
                 const increment = target / 50;
-                const updateNumber = () => {
+                const updateCounter = () => {
+                    current += increment;
                     if (current < target) {
-                        current += increment;
-                        stat.textContent = Math.ceil(current);
-                        requestAnimationFrame(updateNumber);
+                        stat.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
                     } else {
-                        stat.textContent = target.toLocaleString();
+                        stat.textContent = target;
                     }
                 };
-                updateNumber();
+                updateCounter();
             });
-        };
-        
-        // Trigger animation when stats come into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateNumbers();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        const statsSection = document.querySelector('.stats');
-        if (statsSection) observer.observe(statsSection);
-    }
-    
-    // ---------- ADMISSIONS FORM VALIDATION ----------
-    const applicationForm = document.getElementById('applicationForm');
-    if (applicationForm) {
-        applicationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const firstName = document.getElementById('firstName')?.value.trim();
-            const lastName = document.getElementById('lastName')?.value.trim();
-            const email = document.getElementById('email')?.value.trim();
-            const phone = document.getElementById('phone')?.value.trim();
-            const dob = document.getElementById('dob')?.value;
-            const program = document.getElementById('program')?.value;
-            
-            let errors = [];
-            
-            if (!firstName) errors.push('First name is required');
-            if (!lastName) errors.push('Last name is required');
-            if (!email) errors.push('Email is required');
-            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Valid email is required');
-            if (!phone) errors.push('Phone number is required');
-            if (!dob) errors.push('Date of birth is required');
-            if (!program) errors.push('Please select a program');
-            
-            if (errors.length > 0) {
-                alert('Please fix the following errors:\n' + errors.join('\n'));
-            } else {
-                alert(`Thank you ${firstName}! Your application has been submitted. We will contact you at ${email} within 3-5 business days.`);
-                applicationForm.reset();
-            }
-        });
-    }
-    
-    // ---------- SMOOTH SCROLLING ----------
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== "#" && href !== "") {
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-    });
-    
-    // ---------- BACK TO TOP BUTTON ----------
-    // Create back to top button
-    const backToTop = document.createElement('button');
-    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    backToTop.id = 'backToTop';
-    backToTop.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--primary, #800020);
-        color: white;
-        border: none;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        transition: all 0.3s ease;
-        z-index: 999;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    `;
-    document.body.appendChild(backToTop);
-    
-    backToTop.addEventListener('mouseenter', () => {
-        backToTop.style.background = '#5a0016';
-        backToTop.style.transform = 'translateY(-3px)';
-    });
-    
-    backToTop.addEventListener('mouseleave', () => {
-        backToTop.style.background = '#800020';
-        backToTop.style.transform = 'translateY(0)';
-    });
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            backToTop.style.display = 'flex';
-        } else {
-            backToTop.style.display = 'none';
         }
-    });
-    
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // ---------- ANIMATION ON SCROLL ----------
-    const animateElements = document.querySelectorAll('.feature-card, .program-card, .school-card, .info-card');
-    
-    const fadeInObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                fadeInObserver.unobserve(entry.target);
+
+        // Use Intersection Observer to trigger animation when stats are visible
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(statsSection);
+        }
+    }
+
+    //FAQ (Contact Page)
+
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    if (faqItems.length > 0) {
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            if (question) {
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
             }
         });
-    }, { threshold: 0.1 });
-    
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        fadeInObserver.observe(el);
-    });
-    
-    // ---------- CURRENT YEAR IN FOOTER ----------
-    const yearElement = document.querySelector('.footer-bottom p');
-    if (yearElement) {
-        const currentYear = new Date().getFullYear();
-        yearElement.innerHTML = yearElement.innerHTML.replace('2025', currentYear);
     }
-    
-    // ---------- ACTIVE NAVIGATION LINK HIGHLIGHTING ----------
+
+    //CONTACT FORM HANDLER (Contact Page)
+
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById('fullName')?.value.trim() || '';
+            const email = document.getElementById('email')?.value.trim() || '';
+            const subject = document.getElementById('subject')?.value || '';
+            const message = document.getElementById('message')?.value.trim() || '';
+
+            // Validation
+            let errors = [];
+
+            if (!fullName) errors.push('Please enter your full name');
+            if (!email) errors.push('Please enter your email address');
+            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Please enter a valid email address');
+            if (!subject) errors.push('Please select a subject');
+            if (!message) errors.push('Please enter your message');
+
+            // Display errors or success
+            if (formStatus) {
+                if (errors.length > 0) {
+                    formStatus.innerHTML = `
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i> ${errors.join(', ')}
+                        </div>
+                    `;
+                    // Auto-hide after 5 seconds
+                    setTimeout(() => {
+                        formStatus.innerHTML = '';
+                    }, 5000);
+                } else {
+                    formStatus.innerHTML = `
+                        <div class="success-message">
+                            <i class="fas fa-check-circle"></i> Thank you ${fullName}! Your message has been sent. We'll get back to you within 24-48 hours.
+                        </div>
+                    `;
+                    contactForm.reset();
+
+                    // Auto-hide after 5 seconds
+                    setTimeout(() => {
+                        formStatus.innerHTML = '';
+                    }, 5000);
+                }
+            }
+        });
+    }
+
+    //SMOOTH SCROLL FOR ANCHOR LINKS
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+
+    //ADD ACTIVE CLASS TO CURRENT PAGE NAV LINK
+
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinkItems = document.querySelectorAll('.nav-link');
-    
-    navLinkItems.forEach(link => {
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
         if (linkHref === currentPage) {
             link.classList.add('active');
+        } else if (currentPage === 'index.html' && linkHref === 'index.html') {
+            link.classList.add('active');
+        } else if (linkHref && currentPage.includes(linkHref.replace('.html', ''))) {
+            // Fallback for partial matches
+            if (currentPage === linkHref) {
+                link.classList.add('active');
+            }
         }
     });
-    
-    // ---------- NEWSLETTER SUBSCRIPTION (if exists) ----------
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]')?.value;
-            if (email) {
-                alert(`Thank you for subscribing! Updates will be sent to ${email}`);
-                this.reset();
-            }
-        });
-    }
-    
-    // ---------- PROGRAM FILTER (if on academics page) ----------
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const programCards = document.querySelectorAll('.program-card');
-    
-    if (filterButtons.length > 0) {
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const filter = btn.getAttribute('data-filter');
-                
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                programCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'scale(0.8';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
+
+    //REVEAL ANIMATIONS ON SCROLL (Optional)
+
+    const revealElements = document.querySelectorAll('.feature-card, .program-card, .school-card, .research-card, .info-card, .mv-card');
+
+    if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    revealObserver.unobserve(entry.target);
+                }
             });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            revealObserver.observe(el);
         });
     }
+
+    //PRELOADER / PAGE TRANSITION EFFECT
     
-    // ---------- PRELOADER (optional) ----------
-    // Add a simple preloader effect
-    const preloader = document.createElement('div');
-    preloader.id = 'preloader';
-    preloader.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        transition: opacity 0.5s ease;
-    `;
-    preloader.innerHTML = `
-        <div style="text-align: center;">
-            <i class="fas fa-university" style="font-size: 3rem; color: #800020; animation: pulse 1s infinite;"></i>
-            <p style="margin-top: 1rem; color: #800020;">Loading...</p>
-        </div>
-    `;
-    
-    // Uncomment to enable preloader
-    // document.body.appendChild(preloader);
-    // window.addEventListener('load', () => {
-    //     setTimeout(() => {
-    //         preloader.style.opacity = '0';
-    //         setTimeout(() => preloader.remove(), 500);
-    //     }, 500);
-    // });
-    
-    console.log('University of Dukes website loaded successfully!');
-});
+    // Simple fade-in effect for body
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.3s ease';
 
-// ---------- ADDITIONAL UTILITY FUNCTIONS ----------
-
-// Function to validate email format
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Function to validate phone number
-function isValidPhone(phone) {
-    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-    return phoneRegex.test(phone);
-}
-
-// Function to format date
-function formatDate(date) {
-    const d = new Date(date);
-    return d.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+    window.addEventListener('load', function () {
+        document.body.style.opacity = '1';
     });
-}
 
-// Export functions for global use
-window.isValidEmail = isValidEmail;
-window.isValidPhone = isValidPhone;
-window.formatDate = formatDate;
+    //LOG CONSOLE MESSAGE (Just for fun)
+
+    console.log('🏛️ University of Dukes | Excellence in Education Since 1965');
+});
