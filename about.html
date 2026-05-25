@@ -1,73 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - University of Dukes</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - University of Dukes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <header>
-    <nav>
-      <div><img src="images/UoDLogoR.png" alt="logo image" style="width: 200px; height: auto;"></div>
-      <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="index.html"><i class="fa-solid fa-house-user"></i> Home</a></li>
-          <li><a href="admissions.html"><i class="fa-solid fa-ticket"></i> Admissions</a></li>
-          <li><a href="#"><i class="fa-solid fa-building"></i> Campus-Life</a></li>
-          <li><a href="#"><i class="fa-solid fa-book"></i> Academics</a></li>
-          <li><a href="about.html"><i class="fa-solid fa-address-card"></i> About Us</a></li>
-        </ul>
-      </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-university logo-icon"></i>
+                <span class="logo-text">Uni of Dukes</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="academics.html" class="nav-link">Academics</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="campus-life.html" class="nav-link">Campus Life</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <!--About us section-->
-  <section class="about-us" id="about">
-    <h2>Where Innovation Meets Excellence!</h2>
-    <p>At University of Dukes, we are committed to academic excellence, innovation, and holistic development.</p>
-    <p>Join us in the pursuit of knowledge and excellence!</p>
+    <section class="about-hero">
+        <div>
+            <h1>About University of Dukes</h1>
+            <p>A Legacy of Excellence, A Future of Innovation</p>
+        </div>
+    </section>
 
-    <div class="about-us-child">
-      <div id="vision">
-        <h3>Our Vision</h3>
-        <p>To be a Centre of Excellence in Scholarship, Research, and Training. To be a dynamic and innovative
-            information hub that empowers lifelong learning, and fosters research excellence.</p>
-      </div>
+    <section class="about-content">
+        <div class="container">
+            <div class="mission-vision">
+                <div class="mv-card">
+                    <i class="fas fa-eye mv-icon"></i>
+                    <h3>Our Vision</h3>
+                    <p>To be a globally recognized Center of Excellence in Scholarship, Research, and Training, empowering lifelong learning and fostering innovation for the betterment of humanity.</p>
+                </div>
+                <div class="mv-card">
+                    <i class="fas fa-bullseye mv-icon"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide transformative education that develops critical thinkers, ethical leaders, and socially responsible global citizens who contribute meaningfully to society.</p>
+                </div>
+            </div>
 
-      <div class="vertical-line"></div>
+            <div class="history">
+                <h2>Our Rich History</h2>
+                <p>Founded in 1965, University of Dukes has grown from a small liberal arts college to a world-renowned research institution. Over six decades, we've remained committed to our founding principle: education that transforms lives and shapes society.</p>
+                <p>Today, we stand as a beacon of academic excellence, with over 15,000 students from 100+ countries, 2,000 distinguished faculty members, and a legacy of groundbreaking discoveries that have changed the world.</p>
+            </div>
+        </div>
+    </section>
 
-      <div id="mission">
-        <h3>Our Mission</h3>
-        <p>To provide a holistic education that enables students to develop an enquiring mind and to pursue
-            truth as well as be socially balanced and responsible members of the society.</p>
-      </div>
-    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>University of Dukes</h4>
+                    <p>Where excellence meets opportunity. Shaping leaders since 1965.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="campus-life.html">Campus Life</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@universityofdukes.edu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Ave, Dukes City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 University of Dukes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <h1>Awards, Certifications & Credentials</h1>
-    <div class="container-credentials" id="awardsList"></div>
-    <script>
-      const awards = [
-        { title: "Best University Award 2024", image: "./images/trophy.jpg" },
-        { title: "ISO 9001 Certified", image: "./images/ISO9001.webp" },
-        { title: "Global Education Excellence", image: "./images/trophy 1.jpg" },
-        { title: "Accredited by ABC Council", image: "./images/kit.jpg" }
-      ];
-      const container = document.getElementById("awardsList");
-      awards.forEach(award => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.innerHTML = `<img src="${award.image}" alt="${award.title}"><h3>${award.title}</h3>`;
-        container.appendChild(card);
-      });
-    </script>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 University of Dukes. All Rights Reserved.</p>
-  </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - University of Dukes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Academics Page Specific Styles */
+        .academics-hero {
+            height: 50vh;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .schools-section {
+            padding: var(--spacing-xl) 0;
+            background: var(--light-gray);
+        }
+
+        .school-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .school-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .school-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .school-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .school-content {
+            flex: 2;
+            padding: var(--spacing-lg);
+        }
+
+        .school-title {
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.8rem;
+        }
+
+        .degree-list {
+            list-style: none;
+            margin-top: var(--spacing-md);
+        }
+
+        .degree-list li {
+            padding: var(--spacing-xs) 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .degree-name {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .degree-duration {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+
+        .research-section {
+            padding: var(--spacing-xl) 0;
+            background: var(--white);
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .research-card {
+            text-align: center;
+            padding: var(--spacing-lg);
+            border-radius: 15px;
+            background: var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .research-card:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .research-card:hover .research-icon {
+            color: var(--white);
+        }
+
+        .research-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .calendar-section {
+            padding: var(--spacing-xl) 0;
+            background: var(--light-gray);
+        }
+
+        .academic-calendar {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .calendar-header {
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--spacing-md);
+            text-align: center;
+        }
+
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar-table th,
+        .calendar-table td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .calendar-table th {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .calendar-table tr:hover {
+            background: var(--light-gray);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-university logo-icon"></i>
+                <span class="logo-text">Uni of Dukes</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="academics.html" class="nav-link active">Academics</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="campus-life.html" class="nav-link">Campus Life</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="academics-hero">
+        <div>
+            <h1>World-Class Academics</h1>
+            <p>Discover your passion across 100+ programs and 10 distinguished schools</p>
+        </div>
+    </section>
+
+    <!-- Schools Section -->
+    <section class="schools-section">
+        <div class="container">
+            <h2 class="section-title">Our Schools & Colleges</h2>
+            
+            <div class="school-card">
+                <div class="school-image">
+                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600" alt="School of Engineering">
+                </div>
+                <div class="school-content">
+                    <h3 class="school-title">School of Engineering & Technology</h3>
+                    <p>Leading innovation in engineering education and research. Our graduates are shaping the future of technology worldwide.</p>
+                    <ul class="degree-list">
+                        <li><span class="degree-name">BSc. Computer Science</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">BSc. Software Engineering</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">BSc. Electrical Engineering</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">MSc. Artificial Intelligence</span><span class="degree-duration">2 Years | Full-time</span></li>
+                        <li><span class="degree-name">PhD. Computer Science</span><span class="degree-duration">4-6 Years | Research</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="school-card">
+                <div class="school-image">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600" alt="School of Medicine">
+                </div>
+                <div class="school-content">
+                    <h3 class="school-title">School of Medicine & Health Sciences</h3>
+                    <p>Training the next generation of healthcare leaders with cutting-edge facilities and world-renowned faculty.</p>
+                    <ul class="degree-list">
+                        <li><span class="degree-name">MBChB - Medicine</span><span class="degree-duration">6 Years | Full-time</span></li>
+                        <li><span class="degree-name">BSc. Nursing</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">BSc. Public Health</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">MSc. Clinical Research</span><span class="degree-duration">2 Years | Full-time</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="school-card">
+                <div class="school-image">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600" alt="Business School">
+                </div>
+                <div class="school-content">
+                    <h3 class="school-title">School of Business & Economics</h3>
+                    <p>Developing business leaders and entrepreneurs who make a difference in the global marketplace.</p>
+                    <ul class="degree-list">
+                        <li><span class="degree-name">BBA - Business Administration</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">BSc. Economics</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">MBA - Master of Business Admin</span><span class="degree-duration">2 Years | Full-time/Part-time</span></li>
+                        <li><span class="degree-name">MSc. Finance</span><span class="degree-duration">1.5 Years | Full-time</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="school-card">
+                <div class="school-image">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600" alt="School of Law">
+                </div>
+                <div class="school-content">
+                    <h3 class="school-title">School of Law</h3>
+                    <p>Preparing future legal professionals with a commitment to justice and excellence.</p>
+                    <ul class="degree-list">
+                        <li><span class="degree-name">LLB - Bachelor of Laws</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">LLM - Master of Laws</span><span class="degree-duration">1 Year | Full-time</span></li>
+                        <li><span class="degree-name">PhD. Law</span><span class="degree-duration">3-5 Years | Research</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="school-card">
+                <div class="school-image">
+                    <img src="https://images.unsplash.com/photo-1544717305-38b9144d7c1f?w=600" alt="School of Arts">
+                </div>
+                <div class="school-content">
+                    <h3 class="school-title">School of Arts & Humanities</h3>
+                    <p>Fostering creativity, critical thinking, and cultural understanding through the arts.</p>
+                    <ul class="degree-list">
+                        <li><span class="degree-name">BA. International Relations</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">BA. Psychology</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">BA. Sociology</span><span class="degree-duration">4 Years | Full-time</span></li>
+                        <li><span class="degree-name">MA. International Affairs</span><span class="degree-duration">2 Years | Full-time</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="research-section">
+        <div class="container">
+            <h2 class="section-title">Research Excellence</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto var(--spacing-lg);">Our researchers are pushing boundaries and making discoveries that change the world.</p>
+            
+            <div class="research-grid">
+                <div class="research-card">
+                    <i class="fas fa-microscope research-icon"></i>
+                    <h3>30+ Research Centers</h3>
+                    <p>Specialized institutes driving innovation across disciplines</p>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-file-alt research-icon"></i>
+                    <p>5,000+ Research Publications</p>
+                    <h3>Published annually in top journals</h3>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-hand-holding-usd research-icon"></i>
+                    <h3>$150M+ Research Funding</h3>
+                    <p>Annual research grants and investments</p>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-trophy research-icon"></i>
+                    <h3>Nobel Laureates</h3>
+                    <p>12 Nobel Prize winners among faculty and alumni</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Calendar -->
+    <section class="calendar-section">
+        <div class="container">
+            <h2 class="section-title">Academic Calendar 2025</h2>
+            <div class="academic-calendar">
+                <div class="calendar-header">
+                    <h3>Important Dates</h3>
+                </div>
+                <table class="calendar-table">
+                    <thead>
+                        <tr><th>Event</th><th>Date</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Fall Semester Application Deadline</td><td>July 15, 2025</td></tr>
+                        <tr><td>Fall Semester Orientation</td><td>August 25-28, 2025</td></tr>
+                        <tr><td>Fall Classes Begin</td><td>September 1, 2025</td></tr>
+                        <tr><td>Fall Break</td><td>October 13-17, 2025</td></tr>
+                        <tr><td>Fall Final Exams</td><td>December 8-12, 2025</td></tr>
+                        <tr><td>Spring Semester Application Deadline</td><td>November 30, 2025</td></tr>
+                        <tr><td>Spring Classes Begin</td><td>January 12, 2026</td></tr>
+                        <tr><td>Spring Break</td><td>March 9-13, 2026</td></tr>
+                        <tr><td>Spring Final Exams</td><td>April 27 - May 1, 2026</td></tr>
+                        <tr><td>Commencement Ceremony</td><td>May 15, 2026</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>University of Dukes</h4>
+                    <p>Where excellence meets opportunity. Shaping leaders since 1965.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="campus-life.html">Campus Life</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@universityofdukes.edu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Ave, Dukes City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 University of Dukes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

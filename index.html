@@ -1,178 +1,183 @@
-<!doctype html>
-<!--Declares the document is an HTML 5-->
+<!DOCTYPE html>
 <html lang="en">
-  <!--Root-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Dukes | Excellence in Education Since 1965</title>
+    <meta name="description" content="University of Dukes - Premier institution for higher education, research, and innovation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
 
-  <head>
-    <!--Contains behind the scenes elements of the web page-->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>University of Dukes</title>
-    <!--Links external stylesheets or resources-->
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Kaushan+Script&family=Macondo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Special+Elite&display=swap"
-      rel="stylesheet"
-    />
-    <!--Fontawsome-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-  </head>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-university logo-icon"></i>
+                <span class="logo-text">Uni of Dukes</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="academics.html" class="nav-link">Academics</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="campus-life.html" class="nav-link">Campus Life</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-  <body>
-    
     <!-- Hero Section -->
     <section class="hero">
-      <!-- Navigation -->
-      <header>
-        <nav>
-          <div>
-            <img
-              src="images/UoDLogoR.png"
-              alt="logo image"
-              style="width: 200px; height: auto"
-            />
-          </div>
-          <div class="nav-links-container">
-            <ul class="nav-links">
-              <li>
-                <a href="index.html"
-                  ><i class="fa-solid fa-house-user"></i> Home</a
-                >
-              </li>
-              <li>
-                <a href="admissions.html"
-                  ><i class="fa-solid fa-ticket"></i> Admissions</a
-                >
-              </li>
-              <li>
-                <a href="#"><i class="fa-solid fa-building"></i> Campus-Life</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-solid fa-book"></i> Academics</a>
-              </li>
-              <li>
-                <a href="about.html"
-                  ><i class="fa-solid fa-address-card"></i> About Us</a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
-      <!-- Image Slider -->
-      <div class="swiper mySwiper">
-        <!-- Hero Text Content -->
-        <div class="hero-content-parent">
-          <div class="hero-content">
-            <h1>Welcome to University of Dukes</h1>
-            <p>
-              A community that makes sustainable contributions to scientific,
-              scholarly, and humanitarian progress.
-            </p>
-            <a href="admissions.html" class="btn">Apply Now</a>
-          </div>
+        <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1920" alt="Campus" class="hero-bg">
+        <div class="hero-content">
+            <h1>Shape Your Future at University of Dukes</h1>
+            <p>Join a community of innovators, leaders, and changemakers. World-class education, cutting-edge research, and unlimited opportunities await.</p>
+            <a href="admissions.html" class="btn btn-primary">Apply Now →</a>
         </div>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img
-              src="images/Konza.jpg"
-              alt="A scenic view of our University campus"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img src="images/A.S.H.A.jpg" alt="Graduation at UoD" />
-          </div>
-          <div class="swiper-slide">
-            <img src="images/YSK.jpg" alt="Scenic view" />
-          </div>
-          <div class="swiper-slide">
-            <img src="images/sunset.jpg" alt="Graduation ceremony" />
-          </div>
-        </div>
-        <!-- Navigation buttons -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <!-- Pagination (dots) -->
-        <div class="swiper-pagination"></div>
-      </div>
     </section>
-    <hr />
-    <!--horizontal line-->
 
     <!-- Features Section -->
-    <section class="features">
-      <div class="feature" id="academics">
-        <img
-          src="images/YSK.jpg"
-          alt="Medical equipment used in Dukes University's medical school"
-        />
-        <h3>Academics</h3>
-        <p>Our programs are ranked among the best in the world.</p>
-      </div>
-
-      <div class="feature">
-        <img
-          src="images/Konza.jpg"
-          alt="A researcher working in the innovation labs"
-        />
-        <h3>Innovation Labs</h3>
-        <p>
-          Dukes researchers created the first programmable, logical quantum
-          processor.
-        </p>
-      </div>
-
-      <div class="feature" id="campus-life">
-        <img src="images/A.S.H.A.jpg" alt="Students playing tennis on campus" />
-        <h3>Vibrant Campus Life</h3>
-        <p>
-          Clubs, athletics, and cultural events make your university life
-          exciting.
-        </p>
-      </div>
+    <section class="features section">
+        <div class="container">
+            <h2 class="section-title">Why Choose University of Dukes?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-chalkboard-user feature-icon"></i>
+                    <h3>World-Class Faculty</h3>
+                    <p>Learn from Nobel laureates, industry experts, and renowned researchers who are leaders in their fields.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-flask feature-icon"></i>
+                    <h3>Cutting-Edge Research</h3>
+                    <p>Access state-of-the-art labs and research centers driving innovation across all disciplines.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe feature-icon"></i>
+                    <h3>Global Network</h3>
+                    <p>Join an alumni network of over 100,000 graduates making an impact in 150+ countries.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hand-holding-heart feature-icon"></i>
+                    <h3>Scholarships Available</h3>
+                    <p>Over $50 million in financial aid awarded annually to deserving students.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <hr />
-    <!--horizontal line-->
+
+    <!-- Stats Section -->
+    <section class="stats section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="15000">0</span>
+                    <span class="stat-label">Students Enrolled</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="2000">0</span>
+                    <span class="stat-label">Faculty Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="100">0</span>
+                    <span class="stat-label">Academic Programs</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-label">Research Centers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs section">
+        <div class="container">
+            <h2 class="section-title">Popular Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400" alt="Computer Science" class="program-image">
+                    <div class="program-content">
+                        <h3 class="program-title">Computer Science</h3>
+                        <p class="program-duration">4 Years | Bachelor's Degree</p>
+                        <p>Master programming, AI, and software development with our industry-aligned curriculum.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400" alt="Medicine" class="program-image">
+                    <div class="program-content">
+                        <h3 class="program-title">Medicine</h3>
+                        <p class="program-duration">6 Years | MD Program</p>
+                        <p>Join the next generation of healthcare leaders at our world-class medical school.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400" alt="Business" class="program-image">
+                    <div class="program-content">
+                        <h3 class="program-title">Business Administration</h3>
+                        <p class="program-duration">4 Years | BBA Program</p>
+                        <p>Develop leadership skills and business acumen for the global marketplace.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section" style="background: var(--light-gray); text-align: center;">
+        <div class="container">
+            <h2>Ready to Begin Your Journey?</h2>
+            <p style="margin-bottom: var(--spacing-md);">Take the first step toward an extraordinary future.</p>
+            <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+            <a href="contact.html" class="btn btn-outline" style="margin-left: var(--spacing-sm);">Contact Us</a>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 University of Dukes. All Rights Reserved.</p>
-
-      <div class="social-links">
-        <h3>Follow Us On:</h3>
-        <a href="#" class="social-icon"
-          ><i class="fa-brands fa-square-facebook"></i
-        ></a>
-        <a href="#" class="social-icon"
-          ><i class="fa-brands fa-square-instagram"></i
-        ></a>
-        <a href="#" class="social-icon"
-          ><i class="fa-brands fa-square-x-twitter"></i
-        ></a>
-        <a href="#" class="social-icon"
-          ><i class="fa-brands fa-linkedin"></i
-        ></a>
-      </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>University of Dukes</h4>
+                    <p>Where excellence meets opportunity. Shaping leaders since 1965.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="campus-life.html">Campus Life</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@universityofdukes.edu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Ave, Dukes City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 University of Dukes. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Custom Script -->
-    <script src="js/myScript.js"></script>
-  </body>
+    <script src="js/main.js"></script>
+</body>
 </html>
