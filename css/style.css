@@ -771,42 +771,6 @@ ul {
     text-align: center;
 }
 
-/* CONTACT PAGE - OFFICE HOURS */
-.office-hours {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-}
-
-.office-hours h3 {
-    color: var(--secondary);
-    margin-bottom: var(--spacing-md);
-}
-
-.office-hours h3 i {
-    color: var(--primary);
-    margin-right: var(--spacing-xs);
-}
-
-.hours-list {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.hours-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: var(--spacing-xs) 0;
-    border-bottom: 1px solid var(--gray-light);
-}
-
-.hours-list li:last-child {
-    border-bottom: none;
-}
-
 /* CONTACT PAGE - MAP */
 .map-container {
     border-radius: var(--radius-lg);
